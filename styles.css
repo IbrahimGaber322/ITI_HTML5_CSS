@@ -1,0 +1,239 @@
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Lemon", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#main {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/space_toon.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#audio-title {
+  width: 100%;
+  text-align: center;
+  color: brown;
+}
+#audio-div {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.555);
+  min-height: 200px;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  min-width: 200px;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: scale 0.8s ease;
+}
+.focused-image {
+  scale: 1.2;
+  box-shadow: 0 0 10px white; 
+}
+
+.img:hover {
+  scale: 1.2 !important;
+}
+
+#audioPlayer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.icon {
+  color: brown;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#feedback {
+  color: white;
+  background-color: rgb(19, 125, 182);
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+#feedback:hover {
+  color: rgb(19, 125, 182);
+  background-color: white;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.281);
+  padding: 15px;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+.display-none {
+  display: none !important;
+}
+.input {
+  font-family: "Lemon", serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 5px;
+  border: none;
+  font-size: large;
+  border-radius: 10px;
+  width: 90%;
+  color: rgb(19, 125, 182);
+}
+input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgb(19, 125, 182);
+  border: 1px solid rgb(19, 125, 182);
+}
+
+#submit {
+  background-color: rgb(19, 125, 182);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-family: "Lemon", serif;
+  font-weight: 400;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#submit:hover {
+  color: rgb(19, 125, 182) ;
+  background-color: white; 
+}
+.yellow {
+  color: yellow;
+}
+.orange {
+  color: rgb(189, 123, 0);
+}
+.blue {
+  color: rgb(19, 125, 182);
+}
+.red{
+    color: red;
+}
+
+.error{
+    margin: 0;
+    padding: 0;
+}
+.input-error{
+    border: 1px solid red;
+    box-shadow: 0 0 10px red;
+}
+
+#colorChanger{
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    background-color: white;
+    justify-content: space-around;
+}
+#colorPickers{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.colorTitle{
+    text-align: center;
+    width: 100%;
+}
+.circle{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    margin: 10px;
+}
+#shapes{
+  max-width: 800px;
+  max-height: 600px;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: relative;
+}
+
+.shapes-icon{
+  display: inline-block;
+  
+  font-size: 50px;
+  cursor:pointer;
+}
+.shapes-icon:hover{
+  box-shadow: 0 0 10px black;
+}
+#shapes-icons-cont{
+  display: flex;
+  gap: 10px;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#colorPicker{
+  cursor: pointer;
+}
+#canvas{
+  width: 100%;
+  height: 487px;
+  background-color: white;
+  position: relative;
+}
+.focused-shape{
+  box-shadow: 0 0 10px black;
+}
+#trash{
+  cursor: pointer;
+  font-size: 30px;
+}
+#trash:hover{
+  color: red;
+}
+#logo{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#map{
+  margin :15px
+}

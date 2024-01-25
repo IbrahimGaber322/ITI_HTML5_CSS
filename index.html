@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5_CSS_Ibrahim_Gaber</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+
+    <main id="main">
+        <h1 id="title" class="yellow">Welcome to SpaceToon !</h1>
+        <div id="audio-div">
+            <h2 id="audio-title">Play your favourite song.</h2>
+            <img class="img" onclick="changeSong(this)" id="digital" src="images/digital.jpg" />
+            <img class="img" onclick="changeSong(this)" id="friends" src="images/friends.jpg" />
+            <img class="img" onclick="changeSong(this)" id="reemy" src="images/reemy.jpg" />
+            <img class="img" onclick="changeSong(this)" id="garden" src="images/garden.jpg" />
+            <div id="audioPlayer">
+                <audio id="audio" controls>
+                    <source id="source" type="audio/mp3">
+                </audio>
+                <div class="controls">
+                    <i id="playButton" class="fa-solid fa-pause fa-lg icon"></i>
+                    <input type="range" id="progressBar" min="0" max="100" />
+                    <p class="orange" id="duration"></p>
+                </div>
+                <div class="controls">
+                    <i id="volumeIcon" class="fa-solid fa-volume-high icon"></i>
+                    <input id="volumeControl" min="0" max="100" type="range">
+                    <p class="orange" id="volume"></p>
+                </div>
+
+            </div>
+        </div>
+        <div id="colorChanger">
+            <h4 class="colorTitle">
+                Let's play a small game, you win if you can match the color of the cicle on the right !
+                </h2>
+                <div id="colorPickers">
+                    <label for="redSlider">Red:</label>
+                    <input onchange="updateColor()" type="range" id="redSlider" min="0" step="10" max="50" value="0">
+                    <label for="greenSlider">Green:</label>
+                    <input onchange="updateColor()" type="range" id="greenSlider" min="0" step="10" max="50" value="0">
+                    <label for="blueSlider">Blue:</label>
+                    <input onchange="updateColor()" type="range" id="blueSlider" min="0" step="10" max="50" value="0">
+                </div>
+                <div id="playerCircle" class="circle">
+
+                </div>
+                <div id="defaultCircle" class="circle">
+
+                </div>
+
+        </div>
+        <div id="shapes">
+            <h4 class="colorTitle">Draw what you want here!</h2>
+                <div id="shapes-icons-cont">
+                    <i onclick="selectShape(this)" id="square" class="fa-regular fa-square shapes-icon"></i>
+                    <i onclick="selectShape(this)" id="rectangle" class="fa-regular fa-rectangle-xmark shapes-icon"></i>
+                    <i onclick="selectShape(this)" id="triangle" class="fa-solid fa-triangle-exclamation shapes-icon"></i>
+                    <i onclick="selectShape(this)" id="circle" class="fa-regular fa-circle shapes-icon"></i>
+                    <input  type="color" class="color-input" id="colorPicker" value="#ffffff">
+                    <i id="trash" class="fa-solid fa-trash"></i>
+                </div>
+                <canvas id="canvas" width="800" height="487"></canvas>
+
+        </div>
+        <img class="img" src="images/bear.svg" width="500" height="500" alt="D"/>
+        <div id="feedback">Click to give feedback</div>
+        <form id="form" class="display-none" novalidate>
+            <input required oninput="firstNameError.classList.add('display-none'),this.classList.remove('input-error')"
+                pattern="[A-Za-z]+" placeholder="Enter your first name." id="firstName" name="firstName" class="input"
+                type="text" />
+            <p id="firstNameError" class="red error display-none">Please enter your real name !</p>
+            <input required oninput="lastNameError.classList.add('display-none'),this.classList.remove('input-error')"
+                pattern="[A-Za-z]+" placeholder="Enter your last name." id="lastName" name="lastName" class="input"
+                type="text" />
+            <p id="lastNameError" class="red error display-none">Please enter your real name !</p>
+            <input required oninput="ratingError.classList.add('display-none'),this.classList.remove('input-error')"
+                placeholder="Enter your rating 0-10." id="rating" name="rating" min="0" max="10" class="input"
+                type="number" />
+            <p id="ratingError" class="red error display-none">Please enter a number between 0 and 10!</p>
+            <input required oninput="emailError.classList.add('display-none'),this.classList.remove('input-error')"
+                placeholder="Enter your email." id="email" name="email" class="input" type="text" />
+            <p id="emailError" class="red error display-none">Please enter a valid email address!</p>
+            <button id="submit" type="submit">Send</button>
+        </form>
+        <img id="logo" src="images/iti-logo.svg" width="200px"/>
+        <iframe id="map" width="800" height="600" class="display-none"></iframe>
+    </main>
+   
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
