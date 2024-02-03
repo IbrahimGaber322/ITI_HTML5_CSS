@@ -3,7 +3,7 @@ volume.innerText = 50;
 let username= localStorage.getItem("username")||null;
 title.innerText = `Welcome${username == null? " ":` ${username} `}to SpaceToon`
 const allImages = document.querySelectorAll(".img");
-const googleApiKey = "AIzaSyDpaJC8Skc3MDXFKsfC85iFkkuwcEEc1JI";
+
 
 const changeSong = (caller) => {
   source.src = `audio/${caller.id}.mp3`;
@@ -254,7 +254,7 @@ const getPosition = () => {
   });
 };
 
-const getLocation = async () => {
+/* const getLocation = async () => {
 
   try {
     if ("geolocation" in navigator) {
@@ -279,10 +279,8 @@ const getLocation = async () => {
 
 };
 
-getLocation();
+getLocation(); */
 
 
-const position =     navigator.geolocation.getCurrentPosition();
-const lat= position.coords.latitude;
-const long = position.coords.longitude;
+
 
